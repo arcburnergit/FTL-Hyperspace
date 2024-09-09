@@ -2003,6 +2003,15 @@ Accessed via [`CrewMember`](#CrewMember)'s `.stats` field
 - `std::string` `.name`
 - `bool` `.male`
 
+## CrewMemberFactory
+
+### Methods
+- `void :GetCloneReadyList(std::vector<CrewMember*> vec, bool player)`
+- `void :GetCloneReadyList(bool player)`
+
+### Fields
+- [`std::vector<CrewMember*>`](#CrewMember) `.crewMembers`
+
 ## CrewMember_Extend
 Accessed via [`CrewMember`](#CrewMember)'s `.extend` field
 
