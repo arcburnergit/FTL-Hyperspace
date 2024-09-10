@@ -1402,6 +1402,16 @@ function player_crew_health_boost()
 	end
 end
 ```
+
+## CrewMemberFactory
+
+### Methods
+- `void :GetCloneReadyList(std::vector<CrewMember*> vec, bool player)`
+- `void :GetCloneReadyList(bool player)`
+
+### Fields
+- [`std::vector<CrewMember*>`](#CrewMember) `.crewMembers`
+
 ## CrewMember
 Accessed via [`ShipManager`](#ShipManager)'s `.vCrewList` field or by using the Internal Event `CREW_LOOP`
 
@@ -1891,15 +1901,6 @@ Accessed via [`CrewMember`](#CrewMember)'s `.stats` field
 - `std::string` `.species`
 - `std::string` `.name`
 - `bool` `.male`
-
-## CrewMemberFactory
-
-### Methods
-- `void :GetCloneReadyList(std::vector<CrewMember*> vec, bool player)`
-- `void :GetCloneReadyList(bool player)`
-
-### Fields
-- [`std::vector<CrewMember*>`](#CrewMember) `.crewMembers`
 
 ## CrewMember_Extend
 Accessed via [`CrewMember`](#CrewMember)'s `.extend` field
