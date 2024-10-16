@@ -2244,7 +2244,7 @@ local _, canMove = crew.extend:CalculateStat(Hyperspace.CrewStat.CAN_MOVE)
 - `int` `.selectedSelfRoom`
 - [`Point`](#Point) `.targetPosition`
 - `bool` `.open`
-- [`Pointf`](#Pointf) `.potentialAiming`
+- [`PointF`](#PointF) `.potentialAiming`
 - `bool` `.mouseDown`
 - `bool` `.isAimingTouch`
 - `bool` `.boss_visual`
