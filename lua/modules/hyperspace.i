@@ -2021,6 +2021,12 @@ playerVariableType playerVariables;
 %rename("%s") BlueprintManager::GetWeaponBlueprint;
 %rename("%s") BlueprintManager::GetBlueprintList;
 
+%nodefaultctor AugmentBlueprint;
+%nodefaultdtor AugmentBlueprint;
+%rename("%s") AugmentBlueprint;
+%rename("%s") AugmentBlueprint::value;
+%rename("%s") AugmentBlueprint::stacking;
+
 %nodefaultctor WeaponBlueprint;
 %nodefaultdtor WeaponBlueprint;
 %rename("%s") WeaponBlueprint;
@@ -2197,8 +2203,6 @@ playerVariableType playerVariables;
 %nodefaultctor ShipGraph;
 %nodefaultdtor ShipGraph;
 
-%rename("%s") ShipGraph::ConvertToWorldPosition;
-%rename("%s") ShipGraph::ConvertToLocalPosition;
 %rename("%s") ShipGraph::GetSlotRenderPosition;
 %rename("%s") ShipGraph::TranslateFromGrid;
 %rename("%s") ShipGraph::TranslateToGrid;
@@ -2212,7 +2216,9 @@ playerVariableType playerVariables;
 %rename("%s") ShipGraph::ConnectingDoor;
 %rename("%s") ShipGraph::ContainsPoint;
 %rename("%s") ShipGraph::ConvertToLocalAngle;
+%rename("%s") ShipGraph::ConvertToLocalPosition;
 %rename("%s") ShipGraph::ConvertToWorldAngle;
+%rename("%s") ShipGraph::ConvertToWorldPosition;
 %rename("%s") ShipGraph::Dijkstra;
 %rename("%s") ShipGraph::DoorCount;
 %rename("%s") ShipGraph::FindPath;

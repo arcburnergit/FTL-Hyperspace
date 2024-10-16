@@ -25,7 +25,7 @@
   <mod:setValue>FTL: Hyperspace</mod:setValue>
 </mod:findName>
 <mod:findName type="text" name="version" language="ja">
-  <mod:setValue>\1 (Hyperspace 1.13.5)</mod:setValue>
+  <mod:setValue>\1 (Hyperspace 1.14.2)</mod:setValue>
 </mod:findName>
 <mod:findName type="text" name="fire_chance" language="ja">
   <mod:setValue>火災発生率：\1%</mod:setValue> <!-- \1 is blueprint fireChance * 10, \2 is low/medium/high -->
@@ -35,6 +35,9 @@
 </mod:findName>
 <mod:findName type="text" name="stun_chance" language="ja">
   <mod:setValue>スタン発生率：\1%</mod:setValue> <!-- \1 is blueprint stunChance * 10, \2 is low/medium/high -->
+</mod:findName>
+<mod:findName type="text" name="nameless_one" language="ja">
+  <mod:setValue>名無し</mod:setValue> <!-- Vanilla text "名もなきクルー" does not fit as a ship name. "名無し" is at least suitable for both ship and crew names. -->
 </mod:findName>
 
 <text name="free_missile_chance" language="ja">ミサイルを消費しない確率：\1%</text>  

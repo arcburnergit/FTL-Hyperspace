@@ -2886,6 +2886,7 @@ struct BoarderPodDrone : SpaceDrone
 
 	LIBZHL_API bool CanBeDeployed();
 	LIBZHL_API CollisionResponse CollisionMoving(Pointf start, Pointf finish, Damage damage, bool raytrace);
+	LIBZHL_API void OnLoop();
 	LIBZHL_API void SetDeployed(bool _deployed);
 	LIBZHL_API void SetMovementTarget(Targetable *target);
 	LIBZHL_API void constructor(int _iShipId, int _selfId, const DroneBlueprint &_bp);
@@ -5720,6 +5721,7 @@ struct ImageDesc
 
 struct ExplosionAnimation : AnimationTracker
 {
+	LIBZHL_API void LoadGibs();
 	LIBZHL_API void OnInit(rapidxml::xml_node<char> *node, const std::string &name, Point glowOffset);
 	LIBZHL_API void OnRender(Globals::Rect *shipRect, ImageDesc shipImage, GL_Primitive *shipImagePrimitive);
 	
@@ -5937,6 +5939,7 @@ struct IonDrone;
 struct IonDrone : BoarderDrone
 {
 	LIBZHL_API Damage GetRoomDamage();
+	LIBZHL_API void constructor(int iShipId, DroneBlueprint *blueprint);
 	
 	int lastRoom;
 };
@@ -5950,6 +5953,7 @@ struct IonDroneAnimation : CrewAnimation
 		this->constructor(_shipId, _position, _hostile);
 	}
 
+	LIBZHL_API void UpdateShooting();
 	LIBZHL_API void constructor(int iShipId, Pointf position, bool enemy);
 	
 	Animation ionExplosion;

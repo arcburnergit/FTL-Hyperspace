@@ -368,7 +368,7 @@ Hyperspace.ships.player:DamageBeam(Hyperspace.ships.player:GetRandomRoomCenter()
    - Field is **read-only** but fields under this object may still be mutable.
 - [`HackingSystem*`](#hackingsystem) `.hackingSystem`
    - Field is **read-only** but fields under this object may still be mutable.
-- [`Shields*`](#shieldsystem) `.shieldSystem`
+- [`Shields*`](#shields) `.shieldSystem`
    - Field is **read-only** but fields under this object may still be mutable.
 - [`WeaponSystem*`](#weaponsystem) `.weaponSystem`
    - Field is **read-only** but fields under this object may still be mutable.
@@ -2404,11 +2404,27 @@ local _, canMove = crew.extend:CalculateStat(Hyperspace.CrewStat.CAN_MOVE)
 ### Methods
 
 - `std::string :GetText()`
+   - If `.isLiteral` is true, this gets the value of `.data`, otherwise it gets the text referring to the text id from the value of `.data`.
 
 ### Fields
 
 - `std::string` `.data`
+   - You can change the text by setting this value.
+   - If `.isLiteral` is true, this stores the text itself, otherwise it stores the text id.
 - `bool` `.isLiteral`
+   - If true, the game will display the value of `.data`, otherwise it will refer to the text id from the value of `.data`.
+###### Example
+```lua
+-- Set the texts of all choices in an event to 'new text'
+script.on_internal_event(Defines.InternalEvents.PRE_CREATE_CHOICEBOX, function(event)
+   local choices = event:GetChoices()
+   for i = 0, choices:size() - 1 do
+      local choice = choices[i]
+      choice.text.isLiteral = true
+      choice.text.data = 'new text'
+   end
+end)
+```
 
 ## Description
 
@@ -2764,6 +2780,14 @@ Accessed via `Hyperspace.CustomShipUnlocks.instance`
 - [`WeaponBlueprint`](#WeaponBlueprint) `:*GetWeaponBlueprint(std::string name)`
 - `std::vector<std::string> :GetBlueprintList(std::string name)`
 
+## AugmentBlueprint
+
+**Extends [Blueprint](#Blueprint)**
+
+### Fields
+- `float` `.value`
+- `bool` `.stacking`
+
 ## WeaponBlueprint
 
 **Extends [Blueprint](#Blueprint)**
@@ -2944,7 +2968,9 @@ Accessed via `Hyperspace.ShipGraph.GetShipInfo(int shipId)`
 - [`Door`](#Door) `:*ConnectingDoor(Point p1, Point p2)`
 - `bool :ContainsPoint(int x, int y)`
 - `float :ConvertToLocalAngle(float ang)`
+- [`Pointf`](#Pointf) `:ConvertToLocalPosition(Pointf world, bool past)`
 - `float :ConvertToWorldAngle(float ang)`
+- [`Pointf`](#Pointf) `:ConvertToWorldPosition(Pointf local)`
 - [`Path`](#Path) `:Dijkstra(Point start, Point goal, int shipId)`
 - `int :DoorCount(int roomId)`
 - [`Path`](#Path) `:FindPath(Point p1, Point p2, int shipId)`
