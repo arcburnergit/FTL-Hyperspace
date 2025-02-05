@@ -2174,9 +2174,14 @@ playerVariableType playerVariables;
 %rename("%s") BlueprintManager::GetAugmentBlueprint;
 %rename("%s") BlueprintManager::GetCrewBlueprint;
 %rename("%s") BlueprintManager::GetDroneBlueprint;
+%rename("%s") BlueprintManager::GetItemBlueprint;
 %rename("%s") BlueprintManager::GetShipBlueprint;
 %rename("%s") BlueprintManager::GetWeaponBlueprint;
 %rename("%s") BlueprintManager::GetBlueprintList;
+
+%nodefaultctor ItemBlueprint;
+%nodefaultdtor ItemBlueprint;
+%rename("%s") ItemBlueprint;
 
 %nodefaultctor AugmentBlueprint;
 %nodefaultdtor AugmentBlueprint;

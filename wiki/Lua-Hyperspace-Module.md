@@ -2981,9 +2981,14 @@ Accessed via `Hyperspace.CustomShipUnlocks.instance`
 - [`AugmentBlueprint`](#AugmentBlueprint) `:*GetAugmentBlueprint(std::string name)`
 - [`CrewBlueprint`](#CrewBlueprint) `:GetCrewBlueprint(std::string name)`
 - [`DroneBlueprint`](#DroneBlueprint) `:*GetDroneBlueprint(std::string name)`
+- [`ItemBlueprint`](#ItemBlueprint) `:*GetItemBlueprint(std::string name)`
 - [`ShipBlueprint`](#ShipBlueprint) `:*GetShipBlueprint(std::string name, int sector)`
 - [`WeaponBlueprint`](#WeaponBlueprint) `:*GetWeaponBlueprint(std::string name)`
 - `std::vector<std::string> :GetBlueprintList(std::string name)`
+
+## ItemBlueprint
+
+**Extends [Blueprint](#Blueprint)**
 
 ## AugmentBlueprint
 
